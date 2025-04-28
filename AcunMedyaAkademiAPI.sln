@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AcunMedyaAkademiAPI", "AcunMedyaAkademiAPI", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcunMedyaAkademiWebAPI", "AcunMedyaAkademiWebAPI\AcunMedyaAkademiWebAPI.csproj", "{12F89090-0E95-4D95-B5E9-05D46E4BE914}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12F89090-0E95-4D95-B5E9-05D46E4BE914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12F89090-0E95-4D95-B5E9-05D46E4BE914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12F89090-0E95-4D95-B5E9-05D46E4BE914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12F89090-0E95-4D95-B5E9-05D46E4BE914}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{12F89090-0E95-4D95-B5E9-05D46E4BE914} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B4774E5-101E-4BAE-8DF1-3A44E5FFFA4C}
+	EndGlobalSection
+EndGlobal
