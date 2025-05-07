@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
 using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 
 namespace AcunMedyaAkademiWebUI.Controllers
 {
@@ -61,6 +62,41 @@ namespace AcunMedyaAkademiWebUI.Controllers
                 return RedirectToAction("Index");
             }
             return View();
+        }
+        [HttpGet]
+        public async Task<IActionResult> UpdateCategory(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var response = await client.GetAsync("https://localhost:7108/api/Categories/" + id);
+            var jsondata = await response.Content.ReadAsStringAsync();
+            var values = JsonConvert.DeserializeObject<UpdateCategoryDto>(jsondata);
+            return View(values);
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateCategory(int id, UpdateCategoryDto model)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var jsondata = JsonConvert.SerializeObject(model);
+            var content = new StringContent(jsondata, Encoding.UTF8, "application/json");
+            var response = await client.PutAsync($"https://localhost:7108/api/Categories/{id}",content);
+            if(response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
+        public async Task<IActionResult> DeleteCategory(int id) 
+        {
+            var client = _httpClientFactory.CreateClient();
+            var response = await client.DeleteAsync("https://localhost:7108/api/Categories/" + id);
+            if (response.IsSuccessStatusCode) 
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+            { 
+            }
         }
 
     }
